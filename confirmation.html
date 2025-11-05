@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Test Confirmation</title>
+      <!--
+         Test confirmation web page
+         Filename: confirmation.html
+
+         This page shows a list of testing information and asks the user if the schedule is correct.
+      -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <script src="js/modernizr.custom.40753.js"></script><!--This is for auto resizing windows-->
+      <link rel="stylesheet" href="css/styles.css"><!--This is for various effects such as bg and/or text color etc.-->
+   </head>
+   <body>
+      <header>
+         <img src="images/csnlogo.jpg" alt="Logo">
+      </header>
+      <article class="display">
+            <div class="confirmation"> <!-- Placeholder info, replace with actual info -->
+               <form>
+                  <h1>Is this the correct schedule?</h1>
+
+                  <p><strong>Student Name:</strong> John Doe</p>
+                  <p><strong>Test Name:</strong> Quiz 1</p>
+                  <p><strong>Course Name/Number:</strong> CIT 101</p>
+                  <p><strong>Proctor's Name:</strong> Steve Proctor</p>
+                  <p><strong>Time:</strong> 9:00 AM</p>
+                  <p><strong>Date:</strong> 2025/10/30</p>
+                  <p><strong>Location:</strong> West Charleston</p>
+                  <p><strong>Exam instructions</strong></p>
+                  <p>The test is open note</p>
+
+
+                  <fieldset class="submitbutton">
+                     <input type="submit" id="confirm" value="Confirm" formaction="ExamList.html">
+                     <input type="submit" id="cancel" value="Cancel" formaction="ExamList.html">
+                  </fieldset>
+               </form>
+            </div>
+      </article>
+   </body>
+</html>

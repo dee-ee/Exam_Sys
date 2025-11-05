@@ -1,0 +1,255 @@
+/* ==========================================================================
+  Base Reset
+  ========================================================================== */
+html {
+   font-size: 12px;
+}
+
+a,
+article,
+aside,
+body,
+div,
+figure,
+figcaption,
+footer,
+form,
+fieldset,
+header,
+h1,
+h2,
+h3,
+img,
+input,
+label,
+legend,
+li,
+nav,
+option,
+p,
+section,
+select,
+textarea,
+ul {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* ==========================================================================
+  Global Styles
+  ========================================================================== */
+select {
+  color: black;
+  background-color: white;
+  border: 1px solid #6d6d6d;
+  font-size: 1em;
+}
+
+/* ==========================================================================
+  Typography
+  ========================================================================== */
+body {
+  font-family: Arial, sans-serif;
+  background: #3093f7;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 3em;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  line-height: 1.4em;
+  color: black;
+}
+
+a {
+  display: inline-block;
+  /* margin-top: 15px; */
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+  layout and Containers
+  ========================================================================== */
+header {
+  width: 100%;
+  background-color: #ffffff; 
+  padding: 10px 0;
+  text-align: center;
+}
+
+header img {
+  height: 80px; /* adjust size of your logo */
+  display: block;
+  margin: 0 auto;
+}
+
+.container {
+  background: rgb(255, 255, 255);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 350px;
+  text-align: center;
+  margin-top: 100px; /* space between header and form */
+}
+
+.confirmation {
+  background: rgb(255, 255, 255);
+  padding: 50px 110px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(46, 45, 45, 0.1);
+  width: 350px;
+  text-align: center;
+  margin-top: 100px; /* space between header and form */
+}
+
+/* ==========================================================================
+  forms
+  ========================================================================== */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input[type="submit"]{
+  --btn-radius: 999px;
+  appearance: none;
+  background: #007bff;
+  color: #ffffff;
+  border: 0;
+  padding: .9em 1.4em;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: clamp(14px, 1.8vw, 16px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, .3);
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+
+input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+label {
+  color: black;
+  font-size: 1.6em;
+}
+
+.locationinput label {
+  margin: 0.7em 0;
+  display: block;
+  position: relative;
+}
+
+/* Booked exams page */
+.bookedexams label {
+  display: block;
+  margin: 5px 0;
+}
+
+.bookedexams legend {
+ font-size: 2em;
+}
+
+/* Student exam settings page */
+.examsettings label {
+  display: block;
+  margin: 5px 0;
+}
+
+/* ==========================================================================
+  table Styles
+  ========================================================================== */
+table {
+  margin: 1em auto;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: 1px solid #9aa0a6;
+  border-radius: 3px;
+  overflow: hidden;
+  color: black;
+  font-size: clamp(14px, 1.4vw, 20px);
+}
+
+
+
+
+
+th {
+  background-color: #181a1b;
+  text-align: center;
+  font-weight: bold;
+}
+
+td a, th a {
+  font-size: 1em;
+  overflow: hidden;
+}
+/* ==========================================================================
+  Calendar 
+  ========================================================================== */
+.calendar {
+  background: #fff;
+  padding: clamp(12px, 2vw, 32px);
+  border-radius: 22px;         /* fun rounded card */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: min(95vw, 1200px);    /* scales with screen, caps on huge displays */
+  text-align: center;
+  margin-top: clamp(24px, 6vh, 100px);
+}
+
+/* The calendar days at the top */
+.calendardays th {  
+  background-color: #e0e0e0;
+  font-weight: bold;
+  border: 1px solid #000;
+  vertical-align: bottom; /* optional if you use absolute positioning */
+}
+
+/* The calendar dates in the body */
+.calendardates td{  
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border: 1px solid #000;
+}
+.calendardates td span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: 600;
+  color: #1f2937;
+}

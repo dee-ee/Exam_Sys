@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign Up</title>
+        <!--
+        Account registration web page
+        Filename: AccountRegister.html
+
+        Registration for students and teachers.
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/modernizr.custom.40753.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <header>
+            <img src="images/csnlogo.jpg" alt="Logo">
+        </header>
+        <div class="container">
+            <h1>Sign Up</h1>
+            <form method="post" action="php/register.php">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="text" name="student_id" placeholder="NSHE ID" required>
+                <input type="email" name="email" placeholder="Email Address" required> <!-- @student.csn.edu -->
+                <input type="text" name="password" placeholder="Password" required>
+                <input type="submit" value="Submit">
+                <!--<input type="submit" value="Submit" formaction="index.html">-->
+            </form>
+        </div>
+    </body>
+</html>

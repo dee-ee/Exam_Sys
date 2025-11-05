@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <title>Exam Registration</title>
+        <!--
+            Exam Registration page
+            Filename: ExamList.html
+
+            This page shows a list of exams in calendar format.
+            Students can register for exams that are visible on the calendar.
+        -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="js/modernizr.custom.40753.js"></script><!--This is for auto resizing windows-->
+        <link rel="stylesheet" href="css/styles.css"><!--This is for various effects such as bg and/or text color etc.-->
+   </head>
+   <body>
+        <header>
+            <img src="images/csnlogo.jpg" alt="Logo">
+        </header>
+
+        <div class="calendar">
+        <!-- Calendar with exam listings -->
+            <table>
+                <thead class="calendardays">
+                    <tr>
+                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Tue</th><th>Fri</th><th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody class="calendardates">
+                    <tr>  <!-- 1st row -->
+                        <td><span><a href="ExamSettings.html">1</a></span></td>
+                        <td><span>2</span></td>
+                        <td><span>3</span></td>
+                        <td><span>4</span></td>
+                        <td><span>5</span></td>
+                        <td><span>6</span></td>
+                        <td><span>7</span></td>
+                    </tr>
+                    <tr>  <!-- 2nd row -->
+                        <td><span>8</span></td>
+                        <td><span>9</span></td>
+                        <td><span>10</span></td>
+                        <td><span>11</span></td>
+                        <td><span>12</span></td>
+                        <td><span>13</span></td>
+                        <td><span>14</span></td>
+                    </tr>
+                    <tr>  <!-- 3rd row -->
+                        <td><span>15</span></td>
+                        <td><span>16</span></td>
+                        <td><span>17</span></td>
+                        <td><span>18</span></td>
+                        <td><span>19</span></td>
+                        <td><span>20</span></td>
+                        <td><span>21</span></td>
+                    </tr>
+                    <tr>  <!-- 4th row -->
+                        <td><span>22</span></td>
+                        <td><span>23</span></td>
+                        <td><span>24</span></td>
+                        <td><span>25</span></td>
+                        <td><span>26</span></td>
+                        <td><span>27</span></td>
+                        <td><span>28</span></td>
+                    </tr>
+                    <tr>  <!-- 5th row -->
+                        <td><span>29</span></td>
+                        <td><span>30</span></td>
+                        <td><span>31</span></td>
+                        <td> </td> 
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>  <!-- 6th row -->
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td> 
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <footer>
+                <p><a href="BookedExams.html">Registered Exams</a></p> 
+            </footer>
+        </div>
+
+        <!--
+            - Exam data selected using radio buttons/dropdowns/list boxes. There will be no typing info
+            - Exam data selection can either be a popup or another page 
+        -->
+            
+        <!-- Specifications -->
+        <!-- 
+            - No duplicate bookings allowed per exam type; one reservation per exam
+            - Students can book up to 3 different exams
+            - Exam capacity controls - Max seats per session of 20 and running count of booked seats for each ession
+            - When the session is full, it is no longer offered on the registration page
+
+            - Students can cancel reservations
+            - Students can search for reservation history to find their booked sessions (popup or another page)
+        -->
+   </body>
+</html>
