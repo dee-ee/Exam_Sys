@@ -18,7 +18,6 @@
         <header>
             <img src="images/csnlogo.jpg" alt="Logo">
         </header>
-
         <div class="calendar">
         <!-- Calendar with exam listings -->
             <table>
@@ -29,7 +28,7 @@
                 </thead>
                 <tbody class="calendardates">
                     <tr>  <!-- 1st row -->
-                        <td><span><a href="ExamSettings.html">1</a></span></td>
+                        <td><span>1</span></td>
                         <td><span>2</span></td>
                         <td><span>3</span></td>
                         <td><span>4</span></td>
@@ -105,5 +104,52 @@
             - Students can cancel reservations
             - Students can search for reservation history to find their booked sessions (popup or another page)
         -->
+
+    <script>
+    const tbody = document.querySelector('.calendardates');
+    tbody.addEventListener('click', e => {
+        const target = e.target.closest('span') || e.target.closest('a');
+        if (!target) return;
+
+        e.preventDefault();
+        const date = target.dataset.date || target.parentElement.dataset.date;
+
+        // if it were clicked
+        if (date) {
+            const [year, month, day] = date.split('-');
+            console.log(`${month}/${day}/${year}`);
+            window.location.href = 'ExamSettings.html';
+        }
+    });
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+
+    const F_Day = new Date(year, month, 1).getDay(); 
+    const Datefull = new Date(year, month + 1, 0).getDate(); 
+
+    const cells = tbody.querySelectorAll('td');
+    cells.forEach(cell => cell.innerHTML = '');
+
+    for (let day = 1; day <= Datefull; day++) {
+        const index = F_Day + (day - 1);
+        const td = cells[index];
+        if (td) {
+        const span = document.createElement('span');
+
+        if (day) {
+            const link = document.createElement('a');
+            link.href = "ExamSettings.html";
+            link.textContent = day;
+            span.appendChild(link);
+        }
+
+        span.dataset.date = `${year}-${String(month + 1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+        td.appendChild(span);
+        }
+    }
+    </script>
+
+
    </body>
 </html>
