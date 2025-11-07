@@ -1,0 +1,50 @@
+// file: index.ts
+import mysql from "mysql2/promise";
+
+export default async function handler(req: Request) {
+  if (req.method !== "POST") {
+    return new Response("Use POST only", { status: 405 });
+  }
+
+  const { first_name, last_name, email, student_id, password } = await req.json();
+
+  if (!first_name || !last_name || !email || !student_id || !password) {
+    return new Response("Missing fields", { status: 400 });
+  }
+
+  try {
+    const conn = await mysql.createConnection({
+      host: process.env.MYSQLHOST,
+      port: Number(process.env.MYSQLPORT || 3306),
+      user: process.env.MYSQLUSER,
+      password: process.env.MYSQLPASSWORD,
+      database: process.env.MYSQLDATABASE
+    });
+
+    await conn.execute(`
+      CREATE TABLE IF NOT EXISTS students (
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        first_name VARCHAR(100) NOT NULL,
+        last_name  VARCHAR(100) NOT NULL,
+        email      VARCHAR(191) NOT NULL UNIQUE,
+        student_id VARCHAR(100) NOT NULL,
+        password   VARCHAR(255) NOT NULL
+      )
+    `);
+
+    await conn.execute(
+      "INSERT INTO students (first_name, last_name, email, student_id, password) VALUES (?, ?, ?, ?, ?)",
+      [first_name, last_name, email, student_id, password]
+    );
+
+    await conn.end();
+
+    return new Response("Student registered successfully!", {
+      status: 200,
+      headers: { "content-type": "text/plain" }
+    });
+  } catch (err) {
+    console.error(err);
+    return new Response("Server error", { status: 500 });
+  }
+}

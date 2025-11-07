@@ -3,16 +3,17 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-/*
-  Railway automatically provides these env vars on the MySQL service:
-    MYSQLHOST, MYSQLPORT, MYSQLUSER, MYSQLPASSWORD, MYSQLDATABASE
-  If you're running locally without Railway, you can set them in a .env or your shell.
-*/
-$host = getenv('MYSQLHOST');
-$port = getenv('MYSQLPORT') ?: '3306';
-$user = getenv('MYSQLUSER');
-$pass = getenv('MYSQLPASSWORD');
-$name = getenv('MYSQLDATABASE');
+$host = 'mysql.railway.internal';
+$port = '3306';
+$user = 'root';
+$pass = 'BNTBdONqgsoJiomzKyqmITFpWqEjgIZf';
+$name = 'railway';
+
+$host = getenv('MYSQLHOST') ?: $host;
+$port = getenv('MYSQLPORT') ?: $port;
+$user = getenv('MYSQLUSER') ?: $user;
+$pass = getenv('MYSQLPASSWORD') ?: $pass;
+$name = getenv('MYSQLDATABASE') ?: $name;
 
 // Fallback: if no Railway vars are present, bail with a clear message
 if (!$host || !$user || !$name) {

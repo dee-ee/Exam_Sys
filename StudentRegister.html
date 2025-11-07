@@ -19,7 +19,8 @@
         </header>
         <div class="container">
             <h1>Student Registeration</h1>
-            <form method="post" action="php/register.php">
+                <form id="registerForm">
+            <!--//<form method="post" action="php/register.php">-->
                 <input type="text" name="first_name" placeholder="First Name" required>
                 <input type="text" name="last_name" placeholder="Last Name" required>
                 <input type="text" name="student_id" placeholder="NSHE ID" required>
@@ -29,5 +30,18 @@
                 <!--<input type="submit" value="Submit" formaction="index.html">-->
             </form>
         </div>
+        <script>
+            document.getElementById("registerForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(e.target).entries());
+           const res = await fetch("https://mysql-production-65a1.up.railway.app", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+            alert(await res.text());
+            });
+        </script>
+
     </body>
 </html>
