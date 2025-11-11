@@ -119,6 +119,16 @@ header img {
   margin-top: 100px; /* space between header and form */
 }
 
+.containerlarge {
+  background: rgb(255, 255, 255);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 90%;
+  text-align: center;
+  margin-top: 100px; /* space between header and form */
+}
+
 .confirmation {
   background: rgb(255, 255, 255);
   padding: 50px 110px;
@@ -208,10 +218,6 @@ table {
   color: black;
   font-size: clamp(14px, 1.4vw, 20px);
 }
-
-
-
-
 
 th {
   background-color: #181a1b;
