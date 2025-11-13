@@ -3,17 +3,20 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$host = 'mysql.railway.internal';
-$port = '3306';
+$host = 'shortline.proxy.rlwy.net';
+$port = '31347'; // <--- important
 $user = 'root';
-$pass = 'BNTBdONqgsoJiomzKyqmITFpWqEjgIZf';
+$pass = 'YLXjhggmQlhRVGCdhaysqdoEhyLzEHFF';
 $name = 'railway';
 
-$host = getenv('MYSQLHOST') ?: $host;
-$port = getenv('MYSQLPORT') ?: $port;
-$user = getenv('MYSQLUSER') ?: $user;
-$pass = getenv('MYSQLPASSWORD') ?: $pass;
-$name = getenv('MYSQLDATABASE') ?: $name;
+if (getenv('MYSQLHOST')) {
+    $host = getenv('MYSQLHOST');
+    $port = getenv('MYSQLPORT') ?: $port;
+    $user = getenv('MYSQLUSER') ?: $user;
+    $pass = getenv('MYSQLPASSWORD') ?: $pass;
+    $name = getenv('MYSQLDATABASE') ?: $name;
+}
+
 
 // Fallback: if no Railway vars are present, bail with a clear message
 if (!$host || !$user || !$name) {
