@@ -46,7 +46,7 @@
                 </thead>
                 <tbody class="calendardates">
                     <tr>  <!-- 1st row -->
-                        <td><span><a href="ExamSettings.html">1</a></span></td>
+                        <td><span>1</span></td>
                         <td><span>2</span></td>
                         <td><span>3</span></td>
                         <td><span>4</span></td>
@@ -138,7 +138,7 @@
         if (date) {
             const [year, month, day] = date.split('-');
             console.log(`${month}/${day}/${year}`);
-            window.location.href = 'ExamSettings.html';
+            window.location.href = 'ExamSelection.html';
         }
     });
     const today = new Date();
