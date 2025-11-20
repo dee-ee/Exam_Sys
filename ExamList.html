@@ -18,6 +18,24 @@
         <header>
             <img src="images/csnlogo.jpg" alt="Logo">
         </header>
+        
+        <div class="container">  <!-- Container with exams -->
+            <h1>Your Booked Exams</h1>
+            <form action="">  
+                <fieldset class="bookedexams">
+                <legend>Select to remove</legend>
+                <label><input type="checkbox">Exam listing 1</label>
+                <label><input type="checkbox">Exam listing 2</label>
+                <label><input type="checkbox">Exam listing 3</label>
+                <label><input type="checkbox">Exam listing 4</label>
+                </fieldset>
+
+                <fieldset class="submitbutton">
+                <input type="submit" id="remove" value="Remove" formaction="ExamList.html"> <!-- Make it remove selected exams -->
+                </fieldset>
+            </form>
+        </div>
+
         <div class="calendar">
         <!-- Calendar with exam listings -->
             <table>
@@ -28,7 +46,7 @@
                 </thead>
                 <tbody class="calendardates">
                     <tr>  <!-- 1st row -->
-                        <td><span>1</span></td>
+                        <td><span><a href="ExamSettings.html">1</a></span></td>
                         <td><span>2</span></td>
                         <td><span>3</span></td>
                         <td><span>4</span></td>
@@ -84,9 +102,11 @@
                 </tbody>
             </table>
 
+            <!-- (Depricated, now on this page)
             <footer>
                 <p><a href="BookedExams.html">Registered Exams</a></p> 
             </footer>
+            -->
         </div>
 
         <!--
