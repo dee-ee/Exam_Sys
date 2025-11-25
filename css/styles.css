@@ -109,6 +109,10 @@ header img {
   margin: 0 auto;
 }
 
+div {
+  margin-top: clamp(24px, 6vh, 100px);
+}
+
 .container {
   background: rgb(255, 255, 255);
   padding: 30px 40px;
@@ -116,7 +120,6 @@ header img {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 350px;
   text-align: center;
-  margin-top: 100px; /* space between header and form */
 }
 
 .containerlarge {
@@ -126,7 +129,6 @@ header img {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 90%;
   text-align: center;
-  margin-top: 100px; /* space between header and form */
 }
 
 .confirmation {
@@ -136,7 +138,6 @@ header img {
   box-shadow: 0 4px 12px rgba(46, 45, 45, 0.1);
   width: 350px;
   text-align: center;
-  margin-top: 100px; /* space between header and form */
 }
 
 /* ==========================================================================
@@ -165,6 +166,7 @@ input[type="submit"]{
   font-size: clamp(14px, 1.8vw, 16px);
   box-shadow: 0 6px 16px rgba(37, 99, 235, .3);
   transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+  margin-top: 1em;
 }
 
 input[type="submit"]:hover {
