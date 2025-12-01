@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Staff Dashboard - Create Exam</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Teacher / Staff Dashboard</h1>
+
+<p>
+    Use this form to create a new exam session for students.
+</p>
+
+<!--
+    STAFF CREATE EXAM FORM
+
+    This form submits directly to:
+        php/create_exam.php
+
+    That PHP file will:
+      - Check user role
+      - Validate fields
+      - Insert exam into DB
+-->
+
+<form method="POST" action="php/create_exam.php">
+
+    <input type="text" name="exam_name" placeholder="Exam Name" required><br><br>
+
+    <input type="text" name="campus" placeholder="Campus" required><br><br>
+
+    <input type="text" name="room_number" placeholder="Room Number" required><br><br>
+
+    <input type="date" name="exam_date" required><br><br>
+
+    <input type="time" name="exam_time" required><br><br>
+
+    <input type="number" name="capacity" value="20" min="1" max="20"><br><br>
+
+    <button type="submit">Create Exam</button>
+
+</form>
+
+</body>
+</html>

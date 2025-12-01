@@ -1,0 +1,19 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'student') {
+    header("Location: index.html");
+    exit;
+}
+?>
+
+<?php
+session_start();
+
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'proctor') {
+    header("Location: index.html");
+    exit;
+}
+?>
+
+
