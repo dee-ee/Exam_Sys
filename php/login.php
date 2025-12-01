@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if the user exists and if the password matches
     if ($user && $password === $user['password']) {  // Direct comparison for plain text password
 
-        // Set session variables for logged in user
+        // Set session variables for logged in user, stores user info that logged in
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['email']   = $user['email'];
         $_SESSION['role']    = $user['role'];

@@ -45,7 +45,7 @@ try {
     // Teacher names are initially empty and will be updated later.
     $db->exec(" 
         CREATE TABLE IF NOT EXISTS exams (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            exam_id INTEGER PRIMARY KEY AUTOINCREMENT,
             exam_name TEXT NOT NULL,        -- Name of the exam (e.g., 'Math 101 Midterm')
             campus TEXT,                    -- Campus location (e.g., 'Charleston')
             room_number TEXT,               -- Room number for the exam (e.g., 'B101')
@@ -70,7 +70,7 @@ try {
             booked_at TEXT DEFAULT (datetime('now')),     -- Timestamp of booking
             grade TEXT,                                   -- Optional grade for post-exam
             FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE,  -- Student is a foreign key
-            FOREIGN KEY (exam_id) REFERENCES exams(id) ON DELETE CASCADE,     -- Exam is a foreign key
+            FOREIGN KEY (exam_id) REFERENCES exams(exam_id) ON DELETE CASCADE,     -- Exam is a foreign key
             UNIQUE (student_id, exam_id)                  -- Prevents duplicate bookings for the same exam
         );
     ");

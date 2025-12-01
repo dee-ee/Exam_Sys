@@ -48,7 +48,7 @@
             <table>
                 <thead class="calendardays">
                     <tr>
-                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Tue</th><th>Fri</th><th>Sat</th>
+                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
                     </tr>
                 </thead>
                 <tbody class="calendardates">
@@ -109,28 +109,7 @@
                 </tbody>
             </table>
 
-            <!-- (Depricated, now on this page)
-            <footer>
-                <p><a href="BookedExams.html">Registered Exams</a></p> 
-            </footer>
-            -->
         </div>
-
-        <!--
-            - Exam data selected using radio buttons/dropdowns/list boxes. There will be no typing info
-            - Exam data selection can either be a popup or another page 
-        -->
-            
-        <!-- Specifications -->
-        <!-- 
-            - No duplicate bookings allowed per exam type; one reservation per exam
-            - Students can book up to 3 different exams
-            - Exam capacity controls - Max seats per session of 20 and running count of booked seats for each ession
-            - When the session is full, it is no longer offered on the registration page
-
-            - Students can cancel reservations
-            - Students can search for reservation history to find their booked sessions (popup or another page)
-        -->
 
     <script>
     const tbody = document.querySelector('.calendardates');
@@ -139,15 +118,10 @@
         if (!target) return;
 
         e.preventDefault();
-        const date = target.dataset.date || target.parentElement.dataset.date;
-
-        // if it were clicked
-        if (date) {
-            const [year, month, day] = date.split('-');
-            console.log(`${month}/${day}/${year}`);
-            window.location.href = 'ExamSelection.html';
-        }
+        // Redirect all clicks to available_exams .php       
+        window.location.href = 'php/available_exams.php';   
     });
+    
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth();
@@ -162,17 +136,17 @@
         const index = F_Day + (day - 1);
         const td = cells[index];
         if (td) {
-        const span = document.createElement('span');
+            const span = document.createElement('span');
 
-        if (day) {
-            const link = document.createElement('a');
-            link.href = "ExamSettings.html";
-            link.textContent = day;
-            span.appendChild(link);
-        }
+            if (day) {
+                const link = document.createElement('a');
+                link.href = "php/available_exams.php"; // Set link to available_exams.php
+                link.textContent = day;
+                span.appendChild(link);
+            }
 
-        span.dataset.date = `${year}-${String(month + 1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-        td.appendChild(span);
+            span.dataset.date = `${year}-${String(month + 1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+            td.appendChild(span);
         }
     }
     </script>

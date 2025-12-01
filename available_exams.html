@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Exams</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        td {
+            background-color: #fff;
+        }
+        tr.clickable:hover {
+            background-color: #e9ecef;
+            cursor: pointer;
+        }
+        tr.clickable:hover td {
+            background-color: #e9ecef;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Available Exams</h1>
+</header>
+
+<div class="container">
+    <a href="ExamList.html" class="back-link">&larr; Back to Calendar</a>
+    <h2>Exams List</h2>
+    <p>Click on an exam to register.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Exam Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Campus</th>
+                <th>Room Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (count($exams) > 0): ?>
+                <?php foreach ($exams as $exam): ?>
+                <tr class="clickable" onclick="window.location.href='register_exam.php?exam_id=<?= $exam['exam_id'] ?>'">
+                    <td><?= htmlspecialchars($exam['exam_name']) ?></td>
+                    <td><?= htmlspecialchars($exam['exam_date']) ?></td>
+                    <td><?= htmlspecialchars($exam['exam_time']) ?></td>
+                    <td><?= htmlspecialchars($exam['campus']) ?></td>
+                    <td><?= htmlspecialchars($exam['room_number']) ?></td>
+                </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="5">No exams available at the moment.</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
