@@ -1,0 +1,10 @@
+{
+  "name": "railway-function",
+  "type": "module",
+  "dependencies": {
+    "mysql2": "^3.15.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4"
+  }
+}
