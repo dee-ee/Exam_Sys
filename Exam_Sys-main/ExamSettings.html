@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Exam Settings</title>
+        <!--
+            Stduent exam setting web page
+            Filename: ExamSettings.html
+
+            This page shows a list of testing information and settings for the student to choose
+        -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="js/modernizr.custom.40753.js"></script><!--This is for auto resizing windows-->
+        <link rel="stylesheet" href="css/styles.css"><!--This is for various effects such as bg and/or text color etc.-->
+    </head>
+    <body>
+        <header>
+            <img src="images/csnlogo.jpg" alt="Logo">
+        </header>
+        <article class="display">
+            <div class="confirmation">
+                <h1>Schedule Settings</h1>
+                <form action=""> <!-- Placeholder info, replace with actual info -->
+                    <fieldset class="examsettings">
+                        <p><strong>Student Name</strong></p>
+                        <p>Johnathan Doe</p>
+                        <p><strong>Test Name</strong></p>
+                        <p>Mid-terms</p>
+                        <p><strong>Course Name/Number</strong></p>
+                        <p>CIT 101</p>
+                        <p><strong>Proctor's Name</strong></p>
+                        <p>Steven Jobs</p>
+                        <p><strong>Date</strong></p>
+                        <p>2025/11/07</p>
+
+                        <p><strong>Time</strong></p>
+                        <label for="timeinput"> 
+                                <select name="time" id="timeinput">
+                                <option value="1">9:00 AM</option>
+                                <option value="2">12:00 PM</option>
+                                <option value="3">3:00 PM</option>
+                            </select>
+                        </label>
+                        
+                        <p><strong>Location</strong></p>
+                        <label for="locationinput"> 
+                                <select name="location" id="locationinput">
+                                <option value="1">West Charleston</option>
+                                <option value="2">Henderson</option>
+                                <option value="3">North Las Vegas</option>
+                            </select>
+                        </label>
+
+                        <p><strong>Exam instructions</strong></p>
+                        <p>The test is open note</p>
+                    </fieldset>
+
+                    <fieldset class="submitbutton">
+                        <input type="submit" id="confirm" value="Confirm" formaction="confirmation.html">
+                        <input type="submit" id="back" value="Back" formaction="ExamSelection.html">
+                    </fieldset>    
+                </form>
+            </div> 
+        </article>
+    </body>
+</html>
