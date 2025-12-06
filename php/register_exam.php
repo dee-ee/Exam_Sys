@@ -126,6 +126,8 @@ try {
     if (!$exam) {
         die("Exam not found.");
     }
+    
+    $examDate = isset($_GET['date']) ? $_GET['date'] : $exam['exam_date'];
 
     $spotsLeft = $exam['capacity'] - $exam['registered_count'];
 
@@ -386,7 +388,8 @@ try {
             <input type="hidden" name="exam_id" value="<?= $exam_id ?>">
             <button type="submit" class="btn btn-confirm">Yes, Register Me</button>
         </form>
-        <a href="available_exams.php" class="btn btn-cancel">Cancel</a>
+        <a href="available_exams.php?date=<?= urlencode($examDate) ?>" class="btn btn-cancel">Cancel</a>
+
     </div>
 </div>
 
