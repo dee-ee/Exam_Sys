@@ -144,7 +144,8 @@ div {
   forms
   ========================================================================== */
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="password"] {
   width: 100%;
   padding: 10px;
   margin: 10px 0 20px 0;
@@ -170,6 +171,28 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+/* Styled Sign Up anchor to match the Login button */
+.signup-btn {
+  display: inline-block;
+  appearance: none;
+  background: #007bff;
+  color: #ffffff;
+  border: 0;
+  padding: .9em 1.4em;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: clamp(14px, 1.8vw, 16px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, .3);
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+  margin-top: 1em;
+  text-decoration: none;
+}
+
+.signup-btn:hover {
   background: #0056b3;
 }
 
