@@ -43,15 +43,15 @@ try {
             <style>
                 body {
                     font-family: Arial, sans-serif;
-                    background-color: #2196F3;
+                    background: #3093f7;
                     margin: 0;
                     padding: 0;
                     color: #333;
                 }
                 header {
-                    background-color: #1976D2;
-                    color: white;
-                    padding: 15px 0;
+                    width: 100%;
+                    background-color: #ffffff; 
+                    padding: 10px 0;
                     text-align: center;
                 }
                 .container {
@@ -98,7 +98,7 @@ try {
         </head>
         <body>
             <header>
-                <img src="../images/csnlogo.jpg" alt="Logo" style="height: 60px;">
+                <img src="../images/csnlogo.jpg" alt="Logo">
             </header>
             <div class="container">
                 <div class="error-icon">⚠</div>
@@ -150,9 +150,9 @@ try {
                     color: #333;
                 }
                 header {
-                    background-color: #1976D2;
-                    color: white;
-                    padding: 15px 0;
+                    width: 100%;
+                    background-color: #ffffff; 
+                    padding: 10px 0;
                     text-align: center;
                 }
                 .container {
@@ -199,7 +199,7 @@ try {
         </head>
         <body>
             <header>
-                <img src="../images/csnlogo.jpg" alt="Logo" style="height: 60px;">
+                <img src="../images/csnlogo.jpg" alt="Logo">
             </header>
             <div class="container">
                 <div class="error-icon">⚠</div>
@@ -217,10 +217,91 @@ try {
     // Check if already registered for this specific exam
     $check = $db->prepare("SELECT registration_id FROM registrations WHERE student_id = ? AND exam_id = ?");
     $check->execute([$student_id, $exam_id]);
-    
+
     if ($check->fetch()) {
-        echo "<h2>You are already registered for this exam.</h2>";
-        echo "<a href='ExamList.php'>Back to My Exams</a>";
+        ?>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Already Registered</title>
+            <link rel="stylesheet" href="../css/styles.css">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background: #3093f7;
+                    margin: 0;
+                    padding: 0;
+                    color: #333;
+                }
+                header {
+                    width: 100%;
+                    background-color: #ffffff; 
+                    padding: 10px 0;
+                    text-align: center;
+                }
+                .container {
+                    max-width: 600px;
+                    margin: 40px auto;
+                    padding: 30px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                    text-align: center;
+                }
+                .error-icon {
+                    font-size: 60px;
+                    color: #e74c3c;
+                    margin-bottom: 15px;
+                }
+                h2 {
+                    color: #e74c3c;
+                    margin-bottom: 15px;
+                }
+                p {
+                    color: #666;
+                    margin-bottom: 20px;
+                }
+                .btn {
+                    display: inline-block;
+                    padding: 12px 25px;
+                    margin: 10px 5px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                .btn-back {
+                    background-color: #2196F3;
+                    color: white;
+                }
+                .btn-back:hover {
+                    background-color: #1976D2;
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <img src="../images/csnlogo.jpg" alt="Logo">
+            </header>
+            <div class="container">
+                <div class="error-icon">⚠</div>
+                <h2>Already Registered for This Exam</h2>
+                <p>
+                    You are already registered for
+                    <strong><?= htmlspecialchars($exam['exam_name']) ?></strong>
+                    on <strong><?= htmlspecialchars($exam['exam_date']) ?></strong>
+                    at <strong><?= htmlspecialchars($exam['exam_time']) ?></strong>.
+                </p>
+                <p>Please check your exam list for your current registrations.</p>
+                <a href="ExamList.php" class="btn btn-back">← Back to My Exams</a>
+            </div>
+        </body>
+        </html>
+        <?php
         exit();
     }
 
@@ -276,9 +357,9 @@ try {
             color: #333;
         }
         header {
-            background-color: #1976D2;
-            color: white;
-            padding: 15px 0;
+            width: 100%;
+            background-color: #ffffff; 
+            padding: 10px 0;
             text-align: center;
         }
         .container {
@@ -359,7 +440,7 @@ try {
 <body>
 
 <header>
-    <img src="../images/csnlogo.jpg" alt="Logo" style="height: 60px;">
+    <img src="../images/csnlogo.jpg" alt="Logo">
 </header>
 
 <div class="container">

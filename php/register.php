@@ -63,16 +63,102 @@ try {
             if (!$pass) {
                 exit("<h2>Password is required for staff accounts.</h2>");
             }
-
         } else {
             // Invalid email domain
-            exit("
-                <h2>Signup restricted to official CSN accounts:</h2>
+            ?>
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Invalid Email Domain</title>
+                <link rel="stylesheet" href="../css/styles.css">
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        background: #3093f7;
+                        margin: 0;
+                        padding: 0;
+                        color: #333;
+                    }
+                    header {
+                        width: 100%;
+                        background-color: #ffffff; 
+                        padding: 10px 0;
+                        text-align: center;
+                    }
+                    .container {
+                        max-width: 600px;
+                        margin: 40px auto;
+                        padding: 30px;
+                        background-color: #fff;
+                        border-radius: 10px;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                        text-align: center;
+                    }
+                    .error-icon {
+                        font-size: 60px;
+                        color: #e74c3c;
+                        margin-bottom: 15px;
+                    }
+                    h2 {
+                        color: #e74c3c;
+                        margin-bottom: 15px;
+                    }
+                    p, li {
+                        color: #666;
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                    }
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                    }
+                    .btn {
+                        display: inline-block;
+                        padding: 12px 25px;
+                        margin: 10px 5px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        text-decoration: none;
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    .btn-back {
+                        background-color: #2196F3;
+                        color: white;
+                    }
+                    .btn-back:hover {
+                        background-color: #1976D2;
+                    }
+                </style>
+            </head>
+            <body>
+
+            <header>
+                <img src="../images/csnlogo.jpg" alt="Logo">
+            </header>
+
+            <div class="container">
+                <div class="error-icon">⚠</div>
+                <h2>Invalid Email Domain</h2>
+                <p>Signup is restricted to official CSN accounts only:</p>
+
                 <ul>
-                    <li>@student.csn.edu — Students</li>
-                    <li>@csn.edu — Staff</li>
+                    <li><strong>@student.csn.edu</strong> — Students</li>
+                    <li><strong>@csn.edu</strong> — Staff</li>
                 </ul>
-            ");
+
+                <p>Please use your official CSN email address to continue.</p>
+
+                <a href="../AccountRegister.html" class="btn btn-back">← Back to Registration</a>
+            </div>
+
+            </body>
+            </html>
+            <?php
+            exit();
         }
 
         // BASIC VALIDATION

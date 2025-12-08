@@ -189,6 +189,10 @@ $fullName = $user['first_name'] . ' ' . $user['last_name'];
 
 <body>
 
+<header>
+    <img src="../images/csnlogo.jpg" alt="Logo">
+</header>
+
 <div class="dashboard-container">
 
     <!-- Welcome -->

@@ -37,7 +37,7 @@
 
         <!-- NSHE ID (Optional for Staff) -->
         <input type="text" name="nshe_id" placeholder="NSHE ID (Required for Students)" 
-               <?php echo ($_SESSION['role'] === 'staff' ? 'disabled' : 'required'); ?>>
+               <?php echo ($_SESSION['role'] === 'staff' ? 'disabled' : 'required'); ?>
 
         <!-- CSN EMAIL ONLY -->
         <input type="email"
@@ -50,10 +50,10 @@
         <!-- PASSWORD (Staff Only) -->
         <input type="password" name="password" id="passwordInput" placeholder="Password (Staff Only)" 
                class="password-field-staff-only"
-               <?php echo isset($_SESSION['role']) && $_SESSION['role'] === 'staff' ? 'required' : ''; ?>>
+               <?php echo isset($_SESSION['role']) && $_SESSION['role'] === 'staff' ? 'required' : ''; ?>
 
-        <input type="submit" value="Submit">
-
+        <input type="button" id="back" value="Back" onclick="window.location='index.html'">
+        <input type="submit" value="Submit" class="btn-primary">
     </form>
 </div>
 
